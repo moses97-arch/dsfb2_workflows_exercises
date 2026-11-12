@@ -1,0 +1,8 @@
+---
+title: "My own RMarkdown file"
+author: "Moses Lahai"
+date: "2026-11-12"
+output: html_document
+---
+
+This is my first RMarkdown file tracked by Git!!
