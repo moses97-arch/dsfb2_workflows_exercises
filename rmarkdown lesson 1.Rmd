@@ -6,3 +6,4 @@ output: html_document
 ---
 
 This is my first RMarkdown file tracked by Git!!
+Modified sentence for exercise 1.3
