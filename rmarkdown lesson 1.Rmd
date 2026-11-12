@@ -8,3 +8,4 @@ output: html_document
 This is my first RMarkdown file tracked by Git!!
 Modified sentence for exercise 1.3
 Changed file to test new branch
+Modifiying the Rmarkdown for exercise 2.1
