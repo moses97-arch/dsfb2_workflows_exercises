@@ -1,30 +1,32 @@
 library(tidyverse)
+library(readxl)
 
-
-md5_sum_toxrefdb <- tools::md5sum(
+# Read the excel sheet All cycles and skip 11
+all_cycles_sheet <- read_excel(
   here::here(
     "data",
-    "toxrefdb_nel_lel_noael_loael_summary_AUG2014_FOR_PUBLIC_RELEASE.csv"
-  )
-) %>% enframe()
-
-
-md5_sum_toxrefdb %>% 
-  readr::write_csv(
-    here::here(
-      "data",
-      "toxrefdb_nel_lel_noael_loael_summary_AUG2014_FOR_PUBLIC_RELEASE.md5"
-    )
-  )
-
-local_md5_sum <- read_csv(
-  here::here(
-    "data",
-    "toxrefdb_nel_lel_noael_loael_summary_AUG2014_FOR_PUBLIC_RELEASE.md5"
-    
-  )
+    "salmonella CFU kinetics OD600 in LB van ipecs 8okt2020 kleur.xlsx"
+  ),
+  sheet = "All Cycles",
+  skip = 11
 )
 
-# Server doesn't exist but with will be the same code as the local
-# local_md5_sum$value == server_md5_sum$value -> if the same it returns True
+# Select all the time colums and tidy the data by converting it to one column
+time_col <- names(all_cycles_sheet[3:length(names(all_cycles_sheet))])
+all_cycles_sheet %>% pivot_longer(cols = time_col,
+                                  names_to = "time",
+                                  values_to = "measurement (600)") -> tidy_all_cycles
 
+# Rename the 2 starting columns
+colnames(tidy_all_cycles)[1:2] <- c("Well", "Content")
+
+# Create sample data
+layout_sheet <- read_excel(
+  here::here(
+    "data",
+    "salmonella CFU kinetics OD600 in LB van ipecs 8okt2020 kleur.xlsx"
+  ),
+  sheet = "layout"
+)
+
+sample_data <- data.frame()

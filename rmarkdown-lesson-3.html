@@ -11,7 +11,7 @@
 
 <meta name="author" content="Moses Lahai" />
 
-<meta name="date" content="2026-11-16" />
+<meta name="date" content="2026-11-17" />
 
 <title>Lesson 3</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Lesson 3</h1>
 <h4 class="author">Moses Lahai</h4>
-<h4 class="date">2026-11-16</h4>
+<h4 class="date">2026-11-17</h4>
 
 </div>
 
@@ -370,27 +370,24 @@ display: none;
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 <div id="exercise-3.1" class="section level1">
 <h1>Exercise 3.1</h1>
-</div>
-<div id="exercise-3.2" class="section level1">
-<h1>Exercise 3.2</h1>
-<ol style="list-style-type: decimal">
-<li>I prepare for analysis by inspecting the data first. What can you
+<p>The filename can be shortened and be more descriptive and it is not
+unique enough. For the headers there is not one standard way that was
+used to name the headers. One moment camel case is used other moments
+spaces are used for example AanvragerID and Patient ID. # Exercise 3.2
+1. I prepare for analysis by inspecting the data first. What can you
 expect when opening the file. What are the name of the columns and rows.
-Do you have the right file etc.</li>
-<li>You need the excel worksheet All cycles for the analysis. That sheet
-contains the raw data of measurements of each sample in each wells
-collected over time.</li>
-<li>Load the library tidyverse and readxl and open the All cycle sheet
-with read_excel function and assign it to an R object</li>
-<li>Need to remove the row time under each column and adjust the names
-of each raw data column to specify the time</li>
-<li>Salmonella wells over time</li>
-<li>Dear researcher, You have done well however several changes can be
-made. First I would change the file name from salmonella CFU kinetics
-OD600 in LB van ipecs 8okt2020 kleur to salmonella cfu measured over
-time. I would also remove the time row and change each column to
-represent the time so that this data can be analysed</li>
-</ol>
+Do you have the right file etc. 2. You need the excel worksheet All
+cycles for the analysis. That sheet contains the raw data of
+measurements of each sample in each wells collected over time. 3. Load
+the library tidyverse and readxl and open the All cycle sheet with
+read_excel function and assign it to an R object 4. Need to remove the
+row time under each column and adjust the names of each raw data column
+to specify the time 5. Salmonella wells over time 6. Dear researcher,
+You have done well however several changes can be made. First I would
+change the file name from salmonella CFU kinetics OD600 in LB van ipecs
+8okt2020 kleur to salmonella cfu measured over time. I would also remove
+the time row and change each column to represent the time so that this
+data can be analysed</p>
 </div>
 <div id="exercise-3.3" class="section level1">
 <h1>Exercise 3.3</h1>
@@ -449,6 +446,309 @@ local_md5_sum &lt;- read_csv(
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 <pre class="r"><code>### Server doesn&#39;t exist but with will be the same code as the local
 ### local_md5_sum$value == server_md5_sum$value -&gt; if the same it returns True</code></pre>
+</div>
+<div id="exercise-3.5" class="section level1">
+<h1>Exercise 3.5</h1>
+<ol start="3" style="list-style-type: decimal">
+<li>Cell A1 does not start with the data instead A1 to A8 contains the
+metadata of this dataset. When loading the data you need to make sure to
+skip to A11</li>
+<li></li>
+</ol>
+<pre><code>## New names:
+## • `Raw Data (600)` -&gt; `Raw Data (600)...3`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...4`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...5`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...6`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...7`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...8`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...9`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...10`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...11`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...12`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...13`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...14`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...15`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...16`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...17`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...18`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...19`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...20`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...21`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...22`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...23`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...24`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...25`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...26`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...27`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...28`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...29`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...30`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...31`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...32`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...33`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...34`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...35`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...36`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...37`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...38`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...39`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...40`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...41`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...42`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...43`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...44`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...45`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...46`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...47`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...48`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...49`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...50`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...51`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...52`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...53`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...54`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...55`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...56`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...57`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...58`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...59`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...60`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...61`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...62`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...63`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...64`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...65`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...66`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...67`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...68`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...69`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...70`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...71`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...72`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...73`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...74`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...75`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...76`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...77`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...78`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...79`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...80`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...81`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...82`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...83`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...84`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...85`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...86`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...87`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...88`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...89`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...90`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...91`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...92`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...93`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...94`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...95`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...96`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...97`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...98`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...99`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...100`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...101`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...102`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...103`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...104`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...105`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...106`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...107`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...108`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...109`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...110`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...111`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...112`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...113`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...114`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...115`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...116`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...117`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...118`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...119`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...120`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...121`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...122`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...123`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...124`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...125`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...126`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...127`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...128`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...129`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...130`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...131`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...132`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...133`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...134`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...135`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...136`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...137`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...138`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...139`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...140`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...141`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...142`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...143`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...144`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...145`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...146`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...147`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...148`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...149`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...150`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...151`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...152`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...153`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...154`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...155`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...156`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...157`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...158`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...159`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...160`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...161`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...162`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...163`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...164`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...165`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...166`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...167`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...168`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...169`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...170`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...171`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...172`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...173`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...174`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...175`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...176`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...177`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...178`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...179`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...180`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...181`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...182`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...183`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...184`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...185`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...186`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...187`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...188`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...189`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...190`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...191`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...192`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...193`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...194`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...195`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...196`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...197`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...198`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...199`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...200`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...201`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...202`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...203`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...204`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...205`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...206`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...207`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...208`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...209`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...210`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...211`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...212`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...213`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...214`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...215`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...216`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...217`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...218`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...219`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...220`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...221`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...222`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...223`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...224`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...225`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...226`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...227`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...228`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...229`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...230`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...231`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...232`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...233`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...234`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...235`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...236`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...237`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...238`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...239`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...240`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...241`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...242`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...243`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...244`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...245`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...246`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...247`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...248`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...249`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...250`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...251`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...252`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...253`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...254`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...255`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...256`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...257`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...258`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...259`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...260`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...261`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...262`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...263`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...264`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...265`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...266`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...267`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...268`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...269`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...270`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...271`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...272`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...273`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...274`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...275`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...276`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...277`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...278`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...279`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...280`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...281`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...282`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...283`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...284`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...285`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...286`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...287`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...288`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...289`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...290`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...291`
+## • `Raw Data (600)` -&gt; `Raw Data (600)...292`</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li></li>
+</ol>
 </div>
 
 

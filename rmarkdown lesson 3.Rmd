@@ -8,6 +8,9 @@ output: html_document
 library(tidyverse)
 ```
 # Exercise 3.1
+
+The filename can be shortened and be more descriptive and it is not unique enough.
+For the headers there is not one standard way that was used to name the headers. One moment camel case is used other moments spaces are used for example AanvragerID and Patient ID.
 # Exercise 3.2
 1. I prepare for analysis by inspecting the data first. What can you expect when opening the file. What are the name of the columns and rows. Do you have the right file etc.
 2. You need the excel worksheet All cycles for the analysis. That sheet contains the raw data of measurements of each sample in each wells collected over time.
@@ -61,4 +64,24 @@ local_md5_sum <- read_csv(
 
 ### Server doesn't exist but with will be the same code as the local
 ### local_md5_sum$value == server_md5_sum$value -> if the same it returns True
+```
+# Exercise 3.9
+3. Cell A1 does not start with the data instead A1 to A8 contains the metadata of this dataset. When loading the data you need to make sure to skip to A11
+4. 
+```{r exercise3.9, include=FALSE}
+library(tidyverse)
+library(readxl)
+all_cycles_sheet <- read_excel(
+  here::here(
+    "data",
+    "salmonella CFU kinetics OD600 in LB van ipecs 8okt2020 kleur.xlsx"
+  ),
+  sheet = "All Cycles",
+  skip = 11
+)
+```
+5. 
+No the data is not tidy. Each row has it's own observation but each column is contains the time variable. 
+6. 
+```{r exercise3.9_tidy}
 ```
