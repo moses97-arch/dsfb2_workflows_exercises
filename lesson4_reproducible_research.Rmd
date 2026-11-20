@@ -5,4 +5,19 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 ## Exercise 4.1
-A: .....
+A: The Paper was retracted because serious concerns were raised about the veracity and provenance of the underlying data, and the data provider refused to turn over the full dataset for an independent audit.
+
+B: Retraction itself is a problem because it reduces the validity and trust in the science. The failure to catch the red flags early is another highlighted concern and lead to the erosion of public trust
+
+C: No Lancet did not adhere to reproducible open science. Not giving access to the dataset used for the study prevents people from replicating the science.
+
+## Exercise 4.2
+1, 2:  Readxl in R cannot read Excel files directly from a URL (it only accepts local file paths)
+3. 4: Link says I do not have access and I can't download the file
+5: Some files are just too big to manually download on a computer which prevents a lot of people from downloading the files
+
+## Exercise 4.3
+1, 2: The column under example gene name conversions has converted the gene names to dates because of excel autoformatting whereby certain genes that match dates automatically get converted to dates
+3, 4, 5: Select the column Example gene name conversion -> press ctrl + 1 and convert the column to text.
+6: CTRL + F and type in 40059
+7: Excel is flawed especially with it's limited numbers of rows and it's autoformatting. Excel can be save to use by either disabling automatic date conversion or while importing by directly converting the columns you want to text, or not using excel at all and directly importing the csv files into R.
