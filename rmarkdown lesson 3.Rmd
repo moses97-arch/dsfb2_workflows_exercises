@@ -1,0 +1,87 @@
+---
+title: "Lesson 3"
+author: "Moses Lahai"
+date: "`r Sys.Date()`"
+output: html_document
+---
+```{r setup}
+library(tidyverse)
+```
+# Exercise 3.1
+
+The filename can be shortened and be more descriptive and it is not unique enough.
+For the headers there is not one standard way that was used to name the headers. One moment camel case is used other moments spaces are used for example AanvragerID and Patient ID.
+# Exercise 3.2
+1. I prepare for analysis by inspecting the data first. What can you expect when opening the file. What are the name of the columns and rows. Do you have the right file etc.
+2. You need the excel worksheet All cycles for the analysis. That sheet contains the raw data of measurements of each sample in each wells collected over time.
+3. Load the library tidyverse and readxl and open the All cycle sheet with read_excel function and assign it to an R object
+4. Need to remove the row time under each column and adjust the names of each raw data column to specify the time
+5. Salmonella wells over time
+6. Dear researcher,
+You have done well however several changes can be made. First I would change the file name from salmonella CFU kinetics OD600 in LB van ipecs 8okt2020 kleur to salmonella cfu measured over time. I would also remove the time row and change each column to represent the time so that this data can be analysed
+
+# Exercise 3.3
+```{r exercise3.3}
+myDir <- here::here(
+  "data",
+  "md5_examples"
+)
+fileNames <- list.files(myDir, recursive = TRUE)
+tools::md5sum(file.path(myDir, fileNames)) %>% enframe() -> md5sums_all
+md5sums_all$filename <- fileNames
+md5sums_all %>% select(filename,value)
+```
+# Exercise 3.4
+```{r exercise3.4}
+# 3.4 A:
+md5_sum_toxrefdb <- tools::md5sum(
+  here::here(
+    "data",
+    "toxrefdb_nel_lel_noael_loael_summary_AUG2014_FOR_PUBLIC_RELEASE.csv"
+  )
+) %>% enframe()
+
+
+md5_sum_toxrefdb %>% 
+  readr::write_csv(
+    here::here(
+      "data",
+      "toxrefdb_nel_lel_noael_loael_summary_AUG2014_FOR_PUBLIC_RELEASE.md5"
+    )
+  )
+
+# 3.4 B:
+# Could not upload to server but both md5_sums should match
+
+# 3.4 C:
+local_md5_sum <- read_csv(
+  here::here(
+    "data",
+    "toxrefdb_nel_lel_noael_loael_summary_AUG2014_FOR_PUBLIC_RELEASE.md5"
+    
+  )
+)
+
+### Server doesn't exist but with will be the same code as the local
+### local_md5_sum$value == server_md5_sum$value -> if the same it returns True
+```
+# Exercise 3.9
+3. Cell A1 does not start with the data instead A1 to A8 contains the metadata of this dataset. When loading the data you need to make sure to skip to A11
+4. 
+```{r exercise3.9, include=FALSE}
+library(tidyverse)
+library(readxl)
+all_cycles_sheet <- read_excel(
+  here::here(
+    "data",
+    "salmonella CFU kinetics OD600 in LB van ipecs 8okt2020 kleur.xlsx"
+  ),
+  sheet = "All Cycles",
+  skip = 11
+)
+```
+5. 
+No the data is not tidy. Each row has it's own observation but each column is contains the time variable. 
+6. 
+```{r exercise3.9_tidy}
+```
