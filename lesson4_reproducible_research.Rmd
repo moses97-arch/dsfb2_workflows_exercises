@@ -21,3 +21,40 @@ C: No Lancet did not adhere to reproducible open science. Not giving access to t
 3, 4, 5: Select the column Example gene name conversion -> press ctrl + 1 and convert the column to text.
 6: CTRL + F and type in 40059
 7: Excel is flawed especially with it's limited numbers of rows and it's autoformatting. Excel can be save to use by either disabling automatic date conversion or while importing by directly converting the columns you want to text, or not using excel at all and directly importing the csv files into R.
+
+## Exercise 4.4
+```{r exercise4.4}
+library(tidyverse)
+library(nlme)
+
+set.seed(123)
+
+ergoStool %>% as_tibble()
+
+plot_ergo <- ergoStool %>%
+  ggplot(aes(x = reorder(Type, effort), y = effort)) +
+  geom_boxplot(colour = "darkgreen", outlier.shape = NA) +
+  geom_jitter(aes(colour = reorder(Subject, -effort)), 
+              width = 0.2, size = 3) +
+  scale_color_manual(
+    values = c(
+      "red","blue", 
+      "green", "darkblue", 
+      "darkgreen", "purple", 
+      "grey", "black", "darkgrey"),
+  ) +
+  ylab("Effort (Borg scale score)") +
+  xlab("Chair type") +
+  guides(colour=guide_legend(title = "Subject ID")) +
+  theme_bw()
+
+plot_ergo
+```
+A: Within subject variability is noticeable in subject mister blue. Mister blue requires more effort scoring changes depending on the chair
+
+B: Yes subject black and subject green each have different ways of scoring each chair type and that difference varies heavily between chair types. This is a case of between subject variability. However even then each subject takes more effort to step out of the chair the higher the chair is on the borg scale score. 
+
+C: Chair type 2 takes on average the most effort to get out of the chair
+
+D: The chair is reorderd on purpose so that chair type will be orderd from average least amount of effort to average most amount of effort. reorder() reorders the factor levels by mean of the effort per chair type
+
