@@ -1,0 +1,73 @@
+## Exercise 5.1
+```{r exercise5.1}
+penguins %>% 
+  pivot_longer(contains("_"),
+               names_to = "variable_name",
+               values_to = "value")
+
+penguins_long <- penguins %>% 
+  tidyr::pivot_longer(contains("_"), # measurement cols
+                      names_to = c("part", "measure", "unit"), 
+                      names_sep = "_")
+
+penguins_long
+```
+First variable in the penguins_long is the species variable
+
+## Exercise 5.2
+```{r exercise5.2}
+penguins_long %>%
+  pivot_wider(names_from = c("part", "measure", "unit"),
+              values_from = c("value"),
+              names_sep = "_")
+```
+What happened is that there are duplicates values and R doesn't know where to put them. By finding a way to identify the values and to which variable they belong they have to have a id
+```{r exericise5.2_solved}
+penguins_long <- penguins %>% 
+  tidyr::pivot_longer(contains("_"), # measurement cols
+                      names_to = c("part", "measure", "unit"), 
+                      names_sep = "_")
+
+penguins_id <- penguins %>% mutate(id = seq(nrow(.)))
+penguins_long_id <- penguins_id %>%
+  pivot_longer(contains("_"),
+                names_to = c("part", "measure", "unit"),
+                names_sep = "_")
+
+penguins_long_id %>%
+  pivot_wider(names_from = c("part", "measure", "unit"),
+              values_from = c("value"),
+              names_sep = "_")
+```
+## Exercise 5.3
+By creating an empty tibble it tells us that each rabbit_id is only used once
+
+## Exercise 5.4
+```{r exerise5.4}
+food_preference <-
+  tibble(
+    penguin_species = c("Adelie", "Chinstrap", "Gentoo"),
+    favorite_food = c("peanut butter", "cheese", "chocolate")
+  )
+
+
+
+left_join(penguins, food_preference, by = c("species" = "penguin_species"))
+penguins
+```
+The key variables are the species variable in the penguin dataset and the penguin_species variable in the food_preference dataset. species is the primary key because that is the dataset we will be working in and penguin_species is the foreign key
+
+## Exercise 5.5
+```{r exercise5.5}
+penguins %>% filter(year == 2009) %>% select(species, sex, bill_length_mm) 
+```
+
+## Exericse 5.6
+Foreign key is linking to Artist
+
+## Exercise 5.7
+ArtistID 168 refers to Youssou N'Dour
+
+## Exercise 5.8
+SELECT Title FROM Album
+Where ArtistId=90
