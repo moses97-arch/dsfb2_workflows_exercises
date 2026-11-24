@@ -1,3 +1,8 @@
+```{r setup}
+library(tidyverse)
+library(readxl)
+library(palmerpenguins)
+```
 ## Exercise 5.1
 ```{r exercise5.1}
 penguins %>% 
@@ -71,3 +76,93 @@ ArtistID 168 refers to Youssou N'Dour
 ## Exercise 5.8
 SELECT Title FROM Album
 Where ArtistId=90
+
+## Exercise 5.9
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public';
+
+This leads to an sql error saying no such database. The sample database does not have a PostgreSQL database instead it is an SQLite database so the code has to be different
+
+## Exercise 5.10
+create schema verfexperiment;
+
+create table verfexperiment.rabbit (
+	verfnummer int,
+	oorkleur char(50),
+	primary key (verfnummer)
+);
+
+create table verfexperiment.rat (
+	verf int,
+	staartkleur char(50),
+	foreign key (verf) references verfexperiment.rabbit (verfnummer)
+);
+
+## Exercise 5.11
+alter schema verfexperiment
+rename to paintexp;
+
+## Exercise 5.12
+insert into paintexp.rabbit 
+(verfnummer, oorkleur)
+values
+(4, 'pink'),
+(5, 'purple');
+
+insert into paintexp.rat 
+(verf)
+values
+(4),
+(5);
+
+## Exercise 5.13
+select * from paintexp.rabbit;
+select * from paintexp.rat;
+
+## Exercise 5.14
+An unique identifier for each rat
+create table verfexperiment.third_table (
+	a int,
+	kleur char(50)
+);
+
+## Exercise 5.15
+alter table paintexp.rabbit add rating int;
+
+## Exercise 5.16
+select customer_id from customer;
+
+## Exercise 5.17
+Select the columns title and release_year from the table film and sorts the rows first by the release year in descending order and next by the title in ascending order.
+
+## Exercise 5.18
+select
+	first_name,
+	last_name
+from
+	actor
+where
+	first_name='ED'
+order by
+	last_name asc;
+
+## Exercise 5.19
+select
+	first_name || ' ' || last_name as full_name
+from
+	actor
+where first_name like 'B%'
+order by first_name asc;
+
+## 5.20
+Inner join means find a matching key in both tables, address and staf, and replace the address_id from staff with the address from address table
+
+## Exercise 5.21
+```{r exercise5.21}
+selected_file <- read.csv(here::here(
+  "data",
+  "lesson5_export.csv"
+))
+selected_file
+```

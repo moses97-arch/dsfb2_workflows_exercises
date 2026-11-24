@@ -1,7 +1,10 @@
-library(palmerpenguins)
-library(tidyverse)
+library(DBI)
+library(RPostgres)
 
-penguins %>% mutate(penguins_id = row_number(), 
-                    before = species)
+con <- dbConnect(RPostgres::Postgres(),
+                 dbname="pagila",
+                 host="localhost",
+                 port=5432,
+                 user="postgres",
+                 password = "Teeren11")
 
-penguins %>% filter(year == 2009) %>% select(species, sex, bill_length_mm) 
